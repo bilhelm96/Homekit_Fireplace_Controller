@@ -334,12 +334,13 @@ void Qwiic_Relay::_writeCommandOff(uint8_t _command)
 // I-squared-C transaction.
 uint8_t Qwiic_Relay::_readCommand(uint8_t _command)
 {
+  uint8_t size = 1;
 
   _i2cPort->beginTransmission(_address); 
   _i2cPort->write(_command);
   _i2cPort->endTransmission();
 
-  _i2cPort->requestFrom(_address, 1);  
+  _i2cPort->requestFrom(_address, size);  
   uint8_t status = _i2cPort->read();
   return(status);
 
@@ -348,11 +349,12 @@ uint8_t Qwiic_Relay::_readCommand(uint8_t _command)
 // The function reads thee version number of the Single Quad Relay.
 float Qwiic_Relay::_readVersion(uint8_t _command)
 {
+  uint8_t size = 2;
   _i2cPort->beginTransmission(_address); 
   _i2cPort->write(_command); 
   _i2cPort->endTransmission();
 
-  _i2cPort->requestFrom(_address, 2); 
+  _i2cPort->requestFrom(_address, size); 
   float _versValue = _i2cPort->read();
   _versValue += (float)_i2cPort->read() / 10.0 ;
   return(_versValue);

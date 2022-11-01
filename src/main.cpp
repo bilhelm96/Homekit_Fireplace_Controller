@@ -7,10 +7,12 @@
 //////////////////////////////////////////
 // Constants
 //////////////////////////////////////////
-#ifdef ARDUINO_LOLIN_S2_MINI
+#if defined ARDUINO_LOLIN_S2_MINI
   const uint8_t LED_PIN = 15;
-#else
+#elif defined (ARDUINO_ESP32S2_THING_PLUS) || (ARDUINO_ESP32_THING_PLUS_C)
   const uint8_t LED_PIN = 13;
+#else
+ #error "Board not defined"
 #endif
 const uint8_t SWITCH_PIN = 34;
 const byte RELAY_ADDR = 0x18;
