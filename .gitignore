@@ -6,3 +6,4 @@
 lib/SparkFun_Qwiic_Relay_Arduino_Library/Examples
 test
 include
+src/Credentials.txt

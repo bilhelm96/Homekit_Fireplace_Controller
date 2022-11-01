@@ -14,6 +14,7 @@
 #else
  #error "Board not defined"
 #endif
+const uint8_t CONTROL_PIN = 0;
 const uint8_t SWITCH_PIN = 34;
 const byte RELAY_ADDR = 0x18;
 
@@ -23,7 +24,10 @@ const byte RELAY_ADDR = 0x18;
 ///////////////////////////////
 void setup() {
   Serial.begin(115200);
+  homeSpan.setLogLevel(1);    
   homeSpan.setStatusPin(LED_PIN);
+  homeSpan.setControlPin(CONTROL_PIN);
+  homeSpan.enableOTA();
   homeSpan.begin(Category::Heaters, "Fireplace");
 
   new SpanAccessory();

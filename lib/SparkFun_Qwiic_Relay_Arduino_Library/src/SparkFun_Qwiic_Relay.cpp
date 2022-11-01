@@ -31,6 +31,15 @@ bool Qwiic_Relay::begin(uint8_t address,  TwoWire &wirePort )
 
 //****----THE FOLLOWING FIVE FUNCTIONS ARE TO BE USED WITH THE SPARKFUN SINGLE RELAY-----****
 
+void Qwiic_Relay::commandRelay(bool state) {
+  if (state) {
+    turnRelayOn();
+  }
+  else {
+    turnRelayOff();
+  }
+}
+
 // This function turns the single relay board on. 
 void Qwiic_Relay::turnRelayOn()
 {

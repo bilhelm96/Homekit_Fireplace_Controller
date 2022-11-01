@@ -77,6 +77,8 @@ class Qwiic_Relay
     bool begin(uint8_t address, TwoWire &wirePort = Wire); // begin function
 
     //****----THE FOLLOWING FIVE FUNCTIONS ARE TO BE USED WITH THE SPARKFUN SINGLE RELAY-----****
+    // Turn the relay on of off per the variable
+    void commandRelay(bool);
     
     // This function turns the single relay board on. 
     void turnRelayOn();
