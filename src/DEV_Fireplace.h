@@ -4,7 +4,6 @@
 
 struct DEV_Fireplace : Service::Switch {
     uint8_t switchPin;
-    byte addr;
     Qwiic_Relay relay;
     SpanCharacteristic *power;
 
