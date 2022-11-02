@@ -39,11 +39,11 @@ struct DEV_Fireplace : Service::Switch {
 
   void button(int pin, int pressType) override {
     if (pin == switchPin) {
-      LOG1(F("Power swich pressed\n"));
-      LOG1(F("New power state: "));
-      LOG1(!(power->getVal()));
-      LOG1("\n");
       power->setVal(!(power->getVal()));
+      LOG1(F("Power swich pressed: "));
+      LOG1(F("New power state: "));
+      LOG1(power->getVal());
+      LOG1("\n");
       relay.commandRelay(power->getVal());
     }
   }
