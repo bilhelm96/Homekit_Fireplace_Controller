@@ -24,7 +24,7 @@ struct DEV_Fireplace : Service::Switch {
     Serial.print(power->getVal());
     Serial.print("\n");
     
-    new SpanButton(switchPin);
+    new SpanButton(switchPin, SpanButton::TRIGGER_ON_HIGH);
     relay.commandRelay(power->getVal());
   }
 

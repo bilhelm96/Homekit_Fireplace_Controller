@@ -15,7 +15,7 @@
  #error "Board not defined"
 #endif
 const uint8_t CONTROL_PIN = 0;
-const uint8_t SWITCH_PIN = 34;
+const uint8_t SWITCH_PIN = 17;
 const byte RELAY_ADDR = 0x18;
 
 
