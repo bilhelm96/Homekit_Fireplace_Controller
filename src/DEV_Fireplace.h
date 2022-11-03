@@ -15,7 +15,7 @@ struct DEV_Fireplace : Service::Switch {
 
     Serial.print(F("Initializing Fireplace Controller\n"));
     Serial.print(F("Power Relay on I2C address: "));
-    Serial.print(addr);
+    Serial.print(addr, HEX);
     Serial.print("\n");
     Serial.print(F("Power switch on pin: "));
     Serial.print(switchPin);
