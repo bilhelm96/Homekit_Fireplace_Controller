@@ -33,10 +33,10 @@ bool Qwiic_Relay::begin(uint8_t address,  TwoWire &wirePort )
 
 void Qwiic_Relay::commandRelay(bool state) {
   if (state) {
-    turnRelayOn();
+    _writeCommandOn(TURN_RELAY_ON);
   }
   else {
-    turnRelayOff();
+    _writeCommandOff(TURN_RELAY_OFF);
   }
 }
 
